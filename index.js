@@ -22,13 +22,13 @@ const prefix = '.'
 const ownerNumber = ['916282589020']
 
 //===================SESSION-AUTH============================
-if (!fs.existsSync(__dirname + '/auth_info_baileys/creds.json')) {
+if (!fs.existsSync(__dirname + '/ikuze/creds.json')) {
 if(!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!')
 const sessdata = config.SESSION_ID
 const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
 filer.download((err, data) => {
 if(err) throw err
-fs.writeFile(__dirname + '/auth_info_baileys/creds.json', data, () => {
+fs.writeFile(__dirname + '/ikuze/creds.json', data, () => {
 console.log("Session downloaded ✅")
 })})}
 
@@ -40,7 +40,7 @@ const port = process.env.PORT || 8000;
 
 async function connectToWA() {
 console.log("Connecting wa bot 🧬...");
-const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/auth_info_baileys/')
+const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/ikuze/')
 var { version } = await fetchLatestBaileysVersion()
 
 const conn = makeWASocket({
@@ -69,9 +69,9 @@ require("./plugins/" + plugin);
 console.log('Plugins installed successful ✅')
 console.log('Bot connected to whatsapp ✅')
 
-let up = `yuno-md connected successful ✅\n\nPREFIX: ${prefix}`;
+let up = `> *ɪᴋᴜᴢᴇ ᴄᴏɴɴᴇᴄᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟ...*`;
 
-conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://telegra.ph/file/900435c6d3157c98c3c88.jpg` }, caption: up })
+conn.sendMessage(ownerNumber + "@s.whatsapp.net", { image: { url: `https://telegra.ph/file/2147e260c1e68aa62a2f9.jpg` }, caption: up })
 
 }
 })
@@ -174,3 +174,4 @@ app.listen(port, () => console.log(`Server listening on port http://localhost:${
 setTimeout(() => {
 connectToWA()
 }, 4000);  
+        

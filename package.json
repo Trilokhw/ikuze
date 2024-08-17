@@ -4,9 +4,9 @@
   "description": "A WhatsApp bot created using Node.js",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start index.js --deep-monitoring --attach --name IKUZE",
-    "stop": "pm2 stop IKUZE",
-    "restart": "pm2 restart IKUZE"
+    "start": "pm2 start index.js --deep-monitoring --attach --name ikuze",
+    "stop": "pm2 stop ikuze",
+    "restart": "pm2 restart ikuze"
   },
   "dependencies": {
     "@whiskeysockets/baileys": "6.6.0",
